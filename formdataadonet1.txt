@@ -1,0 +1,49 @@
+<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Demo.aspx.cs" Inherits="Project3.Demo" %>
+
+<asp:Content ID="id122" ContentPlaceHolderID="MainContent" runat="server">
+
+    <div class="jumbotron">
+
+        <asp:Label ID="Label1" runat="server" Text="Enter Name"></asp:Label>
+        <br/>
+        <asp:TextBox ID="txtname" runat="server" Width="281px"></asp:TextBox>
+        <br/>
+        <asp:Label ID="Label2" runat="server" Text="Enter DOB"></asp:Label>
+        <br/>
+        <asp:Calendar ID="Calender1" runat="server"></asp:Calendar>
+        <br/>
+         <asp:Label ID="Label3" runat="server" Text="Enter gender"></asp:Label>
+        <br/>
+        <asp:RadioButtonList  ID="RadioButtonList1" runat="server">
+            <asp:ListItem>Male</asp:ListItem>
+            <asp:ListItem>Female</asp:ListItem>
+            <asp:ListItem>Other</asp:ListItem>
+        </asp:RadioButtonList>
+        <br/>
+         <asp:Label ID="Label4" runat="server" Text="Hobbies"></asp:Label>
+        <br/>
+        <asp:CheckBoxList ID="CheckBoxList1" runat="server">
+            <asp:ListItem>Painting</asp:ListItem>
+            <asp:ListItem>Reading</asp:ListItem>
+            <asp:ListItem>Playing</asp:ListItem>
+            <asp:ListItem>Dancing</asp:ListItem>
+        </asp:CheckBoxList>
+        <br/>
+        <asp:Label ID="Label5" runat="server" Text="Education:"></asp:label>
+        <br/>
+         <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+             <asp:ListItem>High School</asp:ListItem>
+             <asp:ListItem>Graduation</asp:ListItem>
+             <asp:ListItem>PHD</asp:ListItem>
+        </asp:DropDownList>
+        <br/>
+        <asp:Button ID="btn1" runat="server" Text="Submit" Height="26px" OnClick="btn1_Click" Width="60px" />
+
+        </div>
+   
+
+    <div class="jumbotron">
+        
+        <asp:TextBox ID="TextBox1" runat="server" Height="200px" Width="700px"></asp:TextBox>
+        </div>
+</asp:Content>
