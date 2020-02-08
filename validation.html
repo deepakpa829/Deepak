@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<title>Example</title>
+<link rel="stylesheet"  type="text/css" href="add.css">
+</head>
+
+<script>
+function Validate()
+{
+var name=/^[A-Za-z]{3,20}$/;
+var x=document.forms["myform"]["Firstname"].value;
+
+if(x =="")
+{
+alert('Name Must filled out');
+
+return false;
+
+}
+
+if(!name.test(x))
+{
+window.alert("The incorrect format");
+return false;
+
+}
+
+
+
+
+}
+
+</script>
+
+
+
+<body>
+<div>
+
+<form name="myform" method="post" class="para1">
+<h1>Registration Form</h1>
+<table>
+
+<tr>
+
+<td>Enter the  Name</td>
+<td><input type="text" name="Firstname"></td></tr>
+
+<tr>
+
+<td>Enter the DOB</td>
+<td><input type="date" name="dat" required></td></tr>
+
+<tr>
+<td>Enter the Address</td>
+<td><input type="text" name="txtadd" required></td></tr>
+
+<tr>
+<td>Enter the Mo_Number</td>
+<td><input type="tel" name="num"  maxlength="10"  required></td></tr>
+
+<tr>
+<td><input type="submit" value="Submit" onclick="Validate()"></td></tr>
+
+<tr>
+<td><input type="Reset" value="reset"></td>
+</tr>
+
+
+
+</div>
+</form>
+</body>
+</html>

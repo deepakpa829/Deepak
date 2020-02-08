@@ -1,0 +1,37 @@
+<!doctype html>
+<head>
+<title>Example</title>
+</head>
+
+<body bgcolor="red">
+
+<script>
+function add()
+{
+
+var a,b,num3;
+a=Number(document.getElementById("first").value);
+b=Number(document.getElementById("second").value);
+num3=a+b;
+document.write('The sum of '+a+' and ' +b+' =' +num3);
+
+
+}
+</script>
+<table>
+<form action="" method="get">
+<tr>
+<td>First Number:<input  id="first"></td></tr>
+
+<tr>
+<td>Second Number:<input id="second"></td><tr>
+
+<tr>
+<td><input type="submit"   onclick="add()"></td></tr>
+
+</form>
+
+</table>
+
+</body>
+</html>
