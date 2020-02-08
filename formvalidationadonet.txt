@@ -1,0 +1,39 @@
+<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Demo1.aspx.cs" Inherits="Project3.Demo1" %>
+
+<asp:Content ID="id111" ContentPlaceHolderID="MainContent" runat="server">
+
+    <div class="jumbotron">
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Must Required Field" ControlToValidate="TextBox1" Font-Bold="True" ForeColor="Red" ValidationGroup="vg">Enter Name</asp:RequiredFieldValidator>
+        <br/>
+        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <br/>
+        <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="Must Required" ControlToValidate="TextBox2" ForeColor="Red" MaximumValue="60" MinimumValue="18" ValidationGroup="vg">Enter Age</asp:RangeValidator>
+        <br/>
+        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        <br/>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Must Be incorrect Format" ControlToValidate="TextBox3" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="vg">Enter Email Id</asp:RegularExpressionValidator>
+        <br/>
+        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+        <br/>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Must be filled" ControlToValidate="TextBox4" Font-Bold="True" ForeColor="Red" ValidationGroup="vg">Enter Password</asp:RequiredFieldValidator>
+        <br/>
+        <asp:TextBox ID="TextBox4" runat="server" TextMode="Password"></asp:TextBox>
+        <br/>
+        <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="password should not be matched" ControlToValidate="TextBox5" Font-Bold="True" ForeColor="Red" ValidationGroup="vg" ControlToCompare="TextBox4">Enter re-type your password</asp:CompareValidator>
+        <br/>
+        <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+        <br/>
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" ValidationGroup="vg" />
+        </br>
+        <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" ValidationGroup="vg" />
+          <br/>
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    
+    
+    </div>
+
+        </asp:Content>
+
+
+
+        
