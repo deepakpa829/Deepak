@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="deepModel3.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'deep.dbo.Course' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="Courseid" />
+          </Key>
+          <Property Name="Courseid" Type="int" Nullable="false" />
+          <Property Name="CourseTitle" Type="nchar" MaxLength="10" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="Fees" Type="money" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'deep.dbo.Student' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Student">
+          <Property Name="St_Id" Type="int" />
+          <Property Name="St_Name" Type="varchar" MaxLength="78" />
+          <Property Name="St_Dept" Type="varchar" MaxLength="88" />
+          <Property Name="St_DOB" Type="date" />
+        </EntityType>-->
+        <EntityContainer Name="deepModel3StoreContainer">
+          <EntitySet Name="Course" EntityType="Self.Course" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Course].[Courseid] AS [Courseid], 
+    [Course].[CourseTitle] AS [CourseTitle], 
+    [Course].[StartDate] AS [StartDate], 
+    [Course].[Fees] AS [Fees]
+    FROM [dbo].[Course] AS [Course]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="deepModel3" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="Courseid" />
+          </Key>
+          <Property Name="Courseid" Type="Int32" Nullable="false" />
+          <Property Name="CourseTitle" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="Fees" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityContainer Name="deepEntities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Courses" EntityType="Self.Course" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="deepModel3StoreContainer" CdmEntityContainer="deepEntities3">
+          <EntitySetMapping Name="Courses">
+            <EntityTypeMapping TypeName="deepModel3.Course">
+              <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="Courseid" ColumnName="Courseid" />
+                <ScalarProperty Name="CourseTitle" ColumnName="CourseTitle" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Fees" ColumnName="Fees" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
